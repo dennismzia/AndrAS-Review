@@ -1,0 +1,11 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="ICC-EXtractor:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/ICC_EXtractor_jar</output-path>
+    <root id="archive" name="ICC-EXtractor.jar">
+      <element id="module-output" name="ICC-EXtractor" />
+      <element id="extracted-dir" path="$USER_HOME$/.var/app/com.jetbrains.IntelliJ-IDEA-Community/cache/coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/scala-library/2.12.17/scala-library-2.12.17.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/.var/app/com.jetbrains.IntelliJ-IDEA-Community/cache/coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/scala-reflect/2.12.17/scala-reflect-2.12.17.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/../../argus-saf-3.2.1-SNAPSHOT-assembly.jar" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>
