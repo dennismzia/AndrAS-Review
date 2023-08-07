@@ -1,0 +1,179 @@
+# - id: api_web
+#   message: 'HTTP Requests, Connections and Sessions'
+#   type: RegexOr
+#   pattern:
+#     - http\.client\.HttpClient
+#     - net\.http\.AndroidHttpClient
+#     - http\.impl\.client\.AbstractHttpClient
+#   input_case: exact
+#   severity: info
+# - id: api_http_connection
+#   message: HTTP Url Connection
+#   type: RegexAnd
+#   pattern:
+#     - java\.net\.HttpURLConnection
+#     - openConnection|HttpURLConnection
+#   input_case: exact
+#   severity: info
+# - id: api_https_connection
+#   message: HTTPS Url Connection
+#   type: RegexAndOr
+#   pattern:
+#     - javax\.net\.ssl\.HttpsURLConnection
+#     - - HttpsURLConnection
+#       - openConnection
+#   input_case: exact
+#   severity: info
+# - id: api_url
+#   message: URL Connection to file/http/https/ftp/jar
+#   type: RegexAndOr
+#   pattern:
+#     - net\.URLConnection
+#     - - openConnection
+#       - connect
+#       - openStream
+#   input_case: exact
+#   severity: info
+
+# # ADDITIONAL RULES
+# # RESTful API Connection
+# - id: api_defaulthttpclient_connection
+#   message: DefaultHttpClient Connection
+#   type: RegexAnd
+#   pattern:
+#     - org\.apache\.http\.impl\.client\.DefaultHttpClient
+#     - HttpClient|HttpGet|DefaultHttpClient|HttpEntity|HttpResponse|HttpPost
+#   input_case: exact
+#   severity: info
+
+# - id: api_androidhttpclient_connection
+#   message: AndroidHttpClient Connection
+#   type: RegexAnd
+#   pattern:
+#     - android\.net\.http\.AndroidHttpClient
+#     - AndroidHttpClient|AndroidHttpClient\.newInstance|HttpResponse|HttpGet|HttpPost
+#   input_case: exact
+#   severity: info
+
+# - id: api_okhttpclient_connection
+#   message: OkHttpClient Connection
+#   type: RegexAnd
+#   pattern:
+#     - okhttp3\.OkHttpClient|com\.squareup\.okhttp\.OkHttpClient
+#     - OkHttpClient|Request\.Builder|newCall|HttpUrl\.parse
+#   input_case: exact
+#   severity: info
+
+# - id: api_retrofit_connection
+#   message: Retrofit Connection
+#   type: RegexAnd
+#   pattern:
+#     - retrofit2\.Retrofit|retrofit.RestAdapter
+#     - Retrofit|Retrofit\.Builder|RestAdapter\.Builder|setEndpoint|baseUrl
+#   input_case: exact
+#   severity: info
+
+# - id: api_volley_connection
+#   message: Volley Connection
+#   type: RegexAndOr
+#   pattern:
+#     - com\.android\.volley\.toolbox\.Volley|com\.android\.volley\.toolbox\.StringRequest|com\.android\.volley\.RequestQueue|com\.android\.volley\.Response
+#     - Volley\.newRequestQueue|StringRequestResponse\.Listener|Response\.ErrorListenersponse|JsonObjectRequest
+#   input_case: exact
+#   severity: info
+
+
+# Just match the API call with URLs
+- id: api_http_connection
+  message: HTTP Url Connection
+  type: RegexAnd
+  pattern:
+    - java\.net\.HttpURLConnection
+    - HttpURLConnection
+    - openConnection
+  input_case: exact
+  severity: info
+- id: api_https_connection
+  message: HTTPS Url Connection
+  type: RegexAnd
+  pattern:
+    - javax\.net\.ssl\.HttpsURLConnection
+    - HttpsURLConnection
+    - openConnection
+  input_case: exact
+  severity: info
+# - id: api_url
+#   message: URL Connection to file/http/https/ftp/jar
+#   type: RegexAndOr
+#   pattern:
+#     - net\.URLConnection
+#     - - openConnection
+#       - connect
+#       - openStream
+#   input_case: exact
+#   severity: info
+
+# ADDITIONAL RULES
+# RESTful API Connection
+- id: api_defaulthttpclient_connection
+  message: DefaultHttpClient Connection
+  type: RegexAnd
+  pattern:
+    - org\.apache\.http\.impl\.client\.DefaultHttpClient
+    - HttpGet|HttpPost|HttpClient|DefaultHttpClient|HttpEntity|HttpResponse
+  input_case: exact
+  severity: info
+
+- id: api_androidhttpclient_connection
+  message: AndroidHttpClient Connection
+  type: RegexAnd
+  pattern:
+    - android\.net\.http\.AndroidHttpClient
+    - HttpGet|HttpPost
+  input_case: exact
+  severity: info
+
+- id: api_okhttpclient_connection
+  message: OkHttpClient Connection
+  type: RegexAnd
+  pattern:
+    - okhttp3\.OkHttpClient|com\.squareup\.okhttp\.OkHttpClient
+    - OkHttpClient
+    - Request\.Builder|HttpUrl\.parse|\.url|\.build|\.newCall
+  input_case: exact
+  severity: info
+
+- id: api_retrofit_connection
+  message: Retrofit Connection
+  type: RegexAnd
+  pattern:
+    - retrofit2\.Retrofit|retrofit.RestAdapter
+    - Retrofit
+    - Retrofit\.Builder|RestAdapter\.Builder|\.baseUrl|setEndpoint|\.create
+  input_case: exact
+  severity: info
+
+- id: api_volley_connection
+  message: Volley Connection
+  type: RegexAnd
+  pattern:
+    - com\.android\.volley\.toolbox\.Volley|com\.android\.volley\.toolbox\.StringRequest|com\.android\.volley\.RequestQueue|com\.android\.volley\.Response
+    - StringRequest|JsonObjectRequest|Response|Volley|newRequestQueue
+  input_case: exact
+  severity: info
+
+# Web View
+- id: api_webview_connection
+  message: WebView Connection
+  type: RegexAndOr
+  pattern:
+    - android\.webkit\.WebView|android\.webkit\.WebViewClient
+    - - postUrl
+      - WebView
+      - getSettings
+      - setJavaScriptEnabled
+      - loadData
+      - loadUrl
+      - setWebViewClient
+  input_case: exact
+  severity: info

@@ -1,0 +1,167 @@
+- id: api_shared_preferences_io
+  message: Shared Preferences
+  type: RegexOr
+  pattern:
+    - getSharedPreferences|getPreferences|getDefaultSharedPreferences
+    - PreferenceManager
+    - android\.content\.SharedPreferences
+    - SharedPreferences\.Editor
+  input_case: exact
+  severity: info
+
+- id: api_sqlite_db
+  message: SQLite Databases
+  type: RegexAndOr
+  pattern:
+    - android\.database\.sqlite\.SQLiteDatabase
+    - - SQLiteDatabase
+      - openOrCreateDatabase
+      - execSQL
+      - rawQuery
+      - query
+      - insert
+      - update
+      - delete
+      - SQLiteOpenHelper
+      - getWritableDatabase
+      - getReadableDatabase
+  input_case: exact
+  severity: info
+
+# # - id: api_firebase
+# #   message: Firebase Real-time Databases Operations
+# #   type: RegexAndOr
+# #   pattern:
+# #     - android\.database\.sqlite
+# #     - - SQLiteDatabase
+# #       - execSQL
+# #   input_case: exact
+# #   severity: info
+
+- id: api_realm_db
+  message: Realm Databases
+  type: RegexAndOr
+  pattern:
+    - io\.realm\.RealmModel|io\.realm\.Realm|io\.realm\.*
+    - - RealmConfiguration
+      - RealmConfiguration\.Builder
+      - Realm\.getInstance
+      - Realm\.getDefaultInstance
+      - executeTransaction
+      - executeTransactionAsync
+  input_case: exact
+  severity: info
+
+- id: api_internal_storage
+  message: Internal Storage
+  type: RegexAndOr
+  pattern:
+    - java\.io\.FileOutputStream|java\.io\.FileInputStream|java\.io\.File
+    - - getFilesDir #Android
+      - filesDir #Kotlin
+      - openFileOutput
+      - openFileInput
+      - fileList
+      - getFilesDir #Android
+      - getDir #Kotlin
+      - getCacheDir #Android
+      - cacheDir #Kotlin
+      - createTempFile
+      - deleteFile
+  input_case: exact
+  severity: info
+
+- id: api_temp_file
+  message: Temp File
+  type: RegexAnd
+  pattern:
+    - java\.io\.File
+    - createTempFile|deleteOnExit|delete
+  input_case: exact
+  severity: info
+
+- id: api_external_storage
+  message: External Storage
+  type: RegexAndOr
+  pattern:
+    - java\.io\.FileOutputStream|java\.io\.FileInputStream|java\.io\.File
+    - - getExternalStorageState
+      - getExternalFilesDirs
+      - getExternalFilesDir
+      - getExternalCacheDir
+      - getExternalStorageDirectory #Deprecated in API level 29
+      - getExternalStoragePublicDirectory #Deprecated in API level 29
+      - getExternalMediaDirs
+      - getExternalCacheDirs
+  input_case: exact
+  severity: info
+
+- id: api_media_storage
+  message: Media Storage
+  type: RegexAnd
+  pattern:
+    - android\.provider\.MediaStore
+    - MediaStore
+    - MediaStore\.Images|MediaStore\.Video|MediaStore\.Audio|MediaStore\.Downloads|MediaStore\.Files
+  input_case: exact
+  severity: info
+
+- id: api_photo_picker
+  message: Photo Picker
+  type: RegexOr
+  pattern:
+    - PickVisualMedia
+    - PickVisualMediaRequest
+  input_case: exact
+  severity: info
+
+# - id: api_keystore
+#   message: Key Store
+#   type: RegexAndOr
+#   pattern:
+#     - java\.security\.KeyStore
+#     - - KeyStore\.getInstance
+#       - KeyStore\.SecretKeyEntry
+#       - getEntry
+#   input_case: exact
+#   severity: info
+
+# - id: api_room_db
+#   message: Room Databases
+#   type: RegexAndOr
+#   pattern:
+#     - androidx\.room
+#     - - RoomDatabase
+#       - Room\.databaseBuilder
+#   input_case: exact
+#   severity: info
+
+- id: api_documents_provider
+  message: Documents
+  type: RegexOr
+  pattern:
+    - ACTION_CREATE_DOCUMENT
+    - ACTION_OPEN_DOCUMENT|ACTION_OPEN_DOCUMENT_TREE
+    - ACTION_GET_CONTENT
+    - ACTION_OPEN_DOCUMENT
+    - ACTION_OPEN_DOCUMENT_TREE
+  input_case: exact
+  severity: info
+
+- id: api_datastore
+  message: DataStore
+  type: RegexAndOr
+  pattern:
+    - androidx\.datastore\.core\.DataStore
+    - RxDataStore|RxPreferenceDataStoreBuilder|updateDataAsync|PreferencesKeys|DataStoreFactory|DataStore
+  input_case: exact
+  severity: info
+
+- id: api_keystore
+  message: KeyStore
+  type: RegexAndOr
+  pattern:
+    - java\.security\.KeyStore|java\.security\.KeyPairGenerator
+    - KeyStore\.getInstance|KeyPairGenerator\.getInstance
+  input_case: exact
+  severity: info

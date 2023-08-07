@@ -1,0 +1,59 @@
+# Bluetooth
+- id: api_bluetooth
+  message: Bluetooth Connection
+  type: RegexAndOr
+  pattern:
+    - android\.bluetooth\.BluetoothManager|android\.bluetooth\.BluetoothAdapter|android\.bluetooth\.*
+    - - BluetoothAdapter\.ACTION_REQUEST_ENABLE
+      - BluetoothAdapter\.getDefaultAdapter
+      - BluetoothAdapter\.getProfileProxy
+      - BluetoothAdapter
+      - BluetoothDevice
+      - BluetoothManager
+  input_case: exact
+  severity: info
+
+# NFC
+- id: api_nfc
+  message: NFC Connection
+  type: RegexAndOr
+  pattern:
+    - android\.nfc\.NfcAdapter|android\.nfc\.*
+    - - NfcAdapter
+      - NfcAdapter\.getDefaultAdapter
+      - NfcAdapter\.getTag
+      - NfcAdapter\.getNfcAdapter
+      - NfcAdapter\.getNfcTag
+
+  input_case: exact
+  severity: info
+
+# - id: api_sms_receiving
+#   message: Receiving SMS
+#   type: RegexAndOr
+#   pattern:
+#     - android\.telephony\.SmsMessage
+#     - - android\.provider\.Telephony\.SMS_RECEIVED
+#       - SmsMessage\.createFromPdu
+#   input_case: exact
+#   severity: info
+
+  # Socket Connection
+- id: api_socket_connection
+  message: Socket Connection
+  type: RegexAnd
+  pattern:
+    - java\.net\.ServerSocket|java\.net\.Socket
+    - ServerSocket|accept|Socket|getInputStream|getOutputStream|getInetAddress
+  input_case: exact
+  severity: info
+
+# SSL Socket Connection
+- id: api_ssl_socket_connection
+  message: SSL Socket Connection
+  type: RegexAnd
+  pattern:
+    - javax\.net\.ssl\.SSLSocket|javax\.net\.ssl\.SSLSocketFactory
+    - SSLSocket|createSocket|getInputStream|getOutputStream|getInetAddress|SSLSocketFactory|getDefault
+  input_case: exact
+  severity: info

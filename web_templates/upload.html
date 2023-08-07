@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AndrAS</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #e9ecef;
+        }
+        .container {
+            max-width: 500px;
+            margin-top: 50px;
+            text-align: center;
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            margin-bottom: 30px;
+        }
+        #dropArea {
+            width: 100%;
+            height: 200px;
+            border: 2px dashed #ccc;
+            border-radius: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+        }
+        #dropArea.highlight {
+            background-color: #f8f9fa;
+        }
+        .logo {
+            width: 100px;
+            height: 100px;
+            margin-bottom: 20px;
+        }
+    </style>
+    <script>
+        function handleFileDrop(event) {
+            event.preventDefault();
+            event.stopPropagation();
+
+            var dropArea = document.getElementById('dropArea');
+            dropArea.classList.remove('highlight');
+
+            var fileInput = document.getElementById('apkFile');
+            fileInput.files = event.dataTransfer.files;
+            //uploadFiles(fileInput.files);
+            updateFileName(fileInput.value.split('\\').pop())
+        }
+
+        function highlightDropArea(event) {
+            event.preventDefault();
+            event.stopPropagation();
+
+            var dropArea = document.getElementById('dropArea');
+            dropArea.classList.add('highlight');
+        }
+
+        function unhighlightDropArea(event) {
+            event.preventDefault();
+            event.stopPropagation();
+
+            var dropArea = document.getElementById('dropArea');
+            dropArea.classList.remove('highlight');
+        }
+
+        function uploadFiles(files) {
+            var fileInput = document.getElementById('apkFile');
+            fileInput.files = files;
+            fileInput.form.submit();
+        }
+
+        function updateFileName(filename) {
+            var label = document.getElementById('apkFileLabel');
+            label.textContent = filename;
+        }
+
+        function updateFileName() {
+            var fileInput = document.getElementById('apkFile');
+            var fileName = fileInput.value.split('\\').pop();
+            var label = document.getElementById('apkFileLabel');
+            label.textContent = fileName;
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>AndrAS</h1>
+        <h2>Automated Threat Modeling for Android Apps</h2>
+        <img class="logo" src="web_static/andras.webp" alt="Logo">
+        <div id="dropArea" ondrop="handleFileDrop(event)" ondragover="highlightDropArea(event)" ondragleave="unhighlightDropArea(event)">
+            <p>Drag and drop your APK file here</p>
+        </div>
+        <br>
+        <form method="POST" enctype="multipart/form-data">
+            <div class="custom-file">
+                <input type="file" class="custom-file-input" id="apkFile" name="file" accept=".apk" required onchange="updateFileName()">
+                <label class="custom-file-label" for="apkFile" id="apkFileLabel">Choose APK file</label>
+            </div>
+            <br>
+            <div class="row">
+              <div class="col">
+                  <div class="form-group">
+                      <label for="tpl">TPLs Detection:</label>
+                      <select class="form-control" id="tpl" name="tpl">
+                        <option value="False">No</option>
+                        <option value="True">Yes</option>
+                      </select>
+                  </div>
+              </div>
+              <div class="col">
+                  <div class="form-group">
+                      <label for="icc">ICC Mode:</label>
+                      <select class="form-control" id="icc" name="icc">
+                          <option value="ICCBot">ICCBot</option>
+                          <option value="Argus">Argus</option>
+                          <option value="ArgusLite">ArgusLite</option>
+                          <option value="Soot">Soot</option>
+                          <option value="None">None</option>
+                      </select>
+                  </div>
+              </div>
+            </div>
+            <br>
+            <button type="submit" id="submit-btn" class="btn btn-primary btn-block">Upload and Analyze</button>
+            <br>
+            <div class="progress" id="progress-bar" style="display: none;">
+              <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: 100%"></div>
+            </div>
+            
+        </form>
+    </div>
+    <script>
+      $(document).ready(function() {
+      $("#submit-btn").click(function() {
+        $("#progress-bar").show();
+      });
+    });
+    </script>
+</body>
+</html>

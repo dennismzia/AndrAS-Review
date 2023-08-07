@@ -1,0 +1,4 @@
+- Need to install Java and add JAVA_HOME
+- pip install networkx==1.11
+pip install matplotlib==2.2.3
+(AttributeError: 'DiGraph' object has no attribute 'node')??

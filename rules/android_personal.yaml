@@ -1,0 +1,78 @@
+# Contact
+- id: api_contact_connection
+  message: Contacts
+  type: RegexAnd
+  pattern:
+    - android\.provider\.ContactsContract
+    - ContactsContract\.Contacts|ContactsContract\.RawContacts|ContactsContract\.Intents
+  input_case: exact
+  severity: info
+
+# Calendar
+- id: api_calendar_connection
+  message: Calendar
+  type: RegexAnd
+  pattern:
+    - android\.provider\.CalendarContract|java\.util\.Calendar
+    - CalendarContract\.Calendars|CalendarContract.Events|CalendarContract\.Instances|CalendarContract\.Attendees|CalendarContract\.Reminders
+  input_case: exact
+  severity: info
+
+# Sensors
+- id: api_sensor_connection
+  message: Sensors
+  type: RegexAnd
+  pattern:
+    - android\.hardware\.SensorManager|android\.hardware\.Sensor
+    - getSystemService|getSensorList|getDefaultSensor|Sensor\.TYPE*|registerListener
+  input_case: exact
+  severity: info
+
+# SMS
+- id: api_sms
+  message: SMS
+  type: RegexAndOr
+  pattern:
+    - android\.telephony\.SmsManager|android\.telephony\.SmsMessage
+    - - SmsManager\.getDefault
+      - sendTextMessage|sendDataMessage|sendMultipartTextMessage
+      - android\.provider\.Telephony\.SMS_RECEIVED
+      - SmsMessage\.createFromPdu
+      - SmsMessage\.getOriginatingAddress
+  input_case: exact
+  severity: info
+
+# Camera
+- id: api_camera
+  message: Camera
+  type: RegexOr
+  pattern:
+    - Manifest\.permission\.CAMERA
+    - CAMERA_REQUEST
+    - android\.hardware\.camera2
+    - Camera\.open
+    - Camera\.openAsync
+  input_case: exact
+  severity: info
+
+# Location
+- id: api_location
+  message: Location Service
+  type: RegexAnd
+  pattern:
+    - android\.location\.LocationManager|android\.location\.Location
+    - Manifest\.permission\.ACCESS_FINE_LOCATION|Manifest\.permission\.ACCESS_COARSE_LOCATION|getLongitude|getLatitude|setLatitude|setLongitude|getAccuracy|getLastKnownLocation
+  input_case: exact
+  severity: info
+
+# Media Recorder
+- id: api_media_recorder
+  message: Media Recorder
+  type: RegexAndOr
+  pattern:
+    - android\.media\.MediaRecorder
+    - - setOutputFormat|setAudioSource|setAudioEncoder|prepare
+      - MediaRecorder
+      - Manifest\.permission\.RECORD_AUDIO
+  input_case: exact
+  severity: info

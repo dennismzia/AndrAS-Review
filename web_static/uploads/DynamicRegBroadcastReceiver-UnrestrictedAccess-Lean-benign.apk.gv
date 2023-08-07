@@ -1,0 +1,27 @@
+digraph threat_model {
+	rankdir=TD size="8,5"
+	node [shape=component]
+	subgraph cluster_android {
+		color=green label="Android OS"
+		"External Entities" [color=gray shape=ellipse style=filled]
+		"External Entities" -> "edu.ksu.cs.benign.MainActivity"
+		subgraph cluster_app {
+			"edu.ksu.cs.benign.MainActivity"
+			color=red label=Benign
+		}
+		subgraph cluster_app {
+			"edu.ksu.cs.benign.MainActivity"
+			"edu.ksu.cs.benign.EmailBroadcastRecv"
+			"edu.ksu.cs.benign.MainActivity" -> "edu.ksu.cs.benign.EmailBroadcastRecv"
+			"edu.ksu.cs.benign.EmailBroadcastRecv"
+			"edu.ksu.cs.benign.EmailActivity"
+			"edu.ksu.cs.benign.EmailBroadcastRecv" -> "edu.ksu.cs.benign.EmailActivity"
+		}
+		subgraph cluster_app {
+		}
+	}
+	subgraph cluster_android {
+		subgraph cluster_app {
+		}
+	}
+}
