@@ -1,0 +1,213 @@
+digraph threat_model {
+	rankdir=TD size="8,5"
+	node [shape=ellipse]
+	subgraph cluster_android {
+		color=green label="Android OS"
+		"External Entities" [color=gray shape=rectangle style=filled]
+		"External Entities" -> "com.insecureshop.ChooserActivity"
+		"External Entities" [color=gray shape=rectangle style=filled]
+		"External Entities" -> "com.insecureshop.AboutUsActivity"
+		"External Entities" [color=gray shape=rectangle style=filled]
+		"External Entities" -> "com.insecureshop.WebViewActivity"
+		"External Entities" [color=gray shape=rectangle style=filled]
+		"External Entities" -> "com.insecureshop.WebView2Activity"
+		"External Entities" [color=gray shape=rectangle style=filled]
+		"External Entities" -> "com.insecureshop.ResultActivity"
+		"External Entities" [color=gray shape=rectangle style=filled]
+		"External Entities" -> "com.insecureshop.ProductListActivity"
+		"External Entities" [color=gray shape=rectangle style=filled]
+		"External Entities" -> "net.gotev.uploadservice.UploadService"
+		"External Entities" [color=gray shape=rectangle style=filled]
+		"External Entities" -> "com.insecureshop.contentProvider.InsecureShopProvider"
+		subgraph cluster_app {
+			"com.insecureshop.ChooserActivity"
+			"com.insecureshop.AboutUsActivity"
+			"com.insecureshop.WebViewActivity"
+			"com.insecureshop.WebView2Activity"
+			"com.insecureshop.ResultActivity"
+			"com.insecureshop.ProductListActivity"
+			"net.gotev.uploadservice.UploadService"
+			"com.insecureshop.contentProvider.InsecureShopProvider"
+			color=red label=InsecureShop
+		}
+		subgraph cluster_app {
+		}
+		subgraph cluster_app {
+		}
+	}
+	"WebView Connection" [color=gold1 shape=rectangle style=filled]
+	"com.insecureshop.databinding.ActivityPrivateBindingImpl" -> "WebView Connection"
+	"WebView Connection" -> "com.insecureshop.databinding.ActivityPrivateBindingImpl"
+	"com.insecureshop.databinding.ActivityPrivateBindingImpl" -> "android.permission.INTERNET"
+	"WebView Connection" -> "android.permission.INTERNET"
+	"WebView Connection" [color=gold1 shape=rectangle style=filled]
+	"com.insecureshop.databinding.ActivityWebviewBindingImpl" -> "WebView Connection"
+	"WebView Connection" -> "com.insecureshop.databinding.ActivityWebviewBindingImpl"
+	"com.insecureshop.databinding.ActivityWebviewBindingImpl" -> "android.permission.INTERNET"
+	"WebView Connection" -> "android.permission.INTERNET"
+	"HTTP Url Connection" [color=gold1 shape=rectangle style=filled]
+	"com.bumptech.glide.load.data.HttpUrlFetcher" -> "HTTP Url Connection"
+	"HTTP Url Connection" -> "com.bumptech.glide.load.data.HttpUrlFetcher"
+	"com.bumptech.glide.load.data.HttpUrlFetcher" -> "android.permission.INTERNET"
+	"HTTP Url Connection" -> "android.permission.INTERNET"
+	"HTTPS Url Connection" [color=gold1 shape=rectangle style=filled]
+	"net.gotev.uploadservice.http.impl.HurlStackConnection" -> "HTTPS Url Connection"
+	"HTTPS Url Connection" -> "net.gotev.uploadservice.http.impl.HurlStackConnection"
+	"net.gotev.uploadservice.http.impl.HurlStackConnection" -> "android.permission.INTERNET"
+	"HTTPS Url Connection" -> "android.permission.INTERNET"
+	"WebView Connection" [color=gold1 shape=rectangle style=filled]
+	"com.insecureshop.PrivateActivity" -> "WebView Connection"
+	"WebView Connection" -> "com.insecureshop.PrivateActivity"
+	"com.insecureshop.PrivateActivity" -> "android.permission.INTERNET"
+	"WebView Connection" -> "android.permission.INTERNET"
+	"WebView Connection" [color=gold1 shape=rectangle style=filled]
+	"com.insecureshop.databinding.ActivityWebviewBinding" -> "WebView Connection"
+	"WebView Connection" -> "com.insecureshop.databinding.ActivityWebviewBinding"
+	"com.insecureshop.databinding.ActivityWebviewBinding" -> "android.permission.INTERNET"
+	"WebView Connection" -> "android.permission.INTERNET"
+	"WebView Connection" [color=gold1 shape=rectangle style=filled]
+	"com.insecureshop.util.CustomWebViewClient" -> "WebView Connection"
+	"WebView Connection" -> "com.insecureshop.util.CustomWebViewClient"
+	"com.insecureshop.util.CustomWebViewClient" -> "android.permission.INTERNET"
+	"WebView Connection" -> "android.permission.INTERNET"
+	"HTTP Url Connection" [color=gold1 shape=rectangle style=filled]
+	"net.gotev.uploadservice.http.impl.HurlStackConnection" -> "HTTP Url Connection"
+	"HTTP Url Connection" -> "net.gotev.uploadservice.http.impl.HurlStackConnection"
+	"net.gotev.uploadservice.http.impl.HurlStackConnection" -> "android.permission.INTERNET"
+	"HTTP Url Connection" -> "android.permission.INTERNET"
+	"WebView Connection" [color=gold1 shape=rectangle style=filled]
+	"com.insecureshop.WebViewActivity" -> "WebView Connection"
+	"WebView Connection" -> "com.insecureshop.WebViewActivity"
+	"com.insecureshop.WebViewActivity" -> "android.permission.INTERNET"
+	"WebView Connection" -> "android.permission.INTERNET"
+	"WebView Connection" [color=gold1 shape=rectangle style=filled]
+	"com.insecureshop.databinding.ActivityPrivateBinding" -> "WebView Connection"
+	"WebView Connection" -> "com.insecureshop.databinding.ActivityPrivateBinding"
+	"com.insecureshop.databinding.ActivityPrivateBinding" -> "android.permission.INTERNET"
+	"WebView Connection" -> "android.permission.INTERNET"
+	"WebView Connection" [color=gold1 shape=rectangle style=filled]
+	"com.insecureshop.WebView2Activity" -> "WebView Connection"
+	"WebView Connection" -> "com.insecureshop.WebView2Activity"
+	"com.insecureshop.WebView2Activity" -> "android.permission.INTERNET"
+	"WebView Connection" -> "android.permission.INTERNET"
+	subgraph cluster_android {
+		"android.permission.INTERNET" [color=lightcoral shape=hexagon style=filled]
+		"android.permission.INTERNET" [color=lightcoral shape=hexagon style=filled]
+		"android.permission.INTERNET" [color=lightcoral shape=hexagon style=filled]
+		"android.permission.INTERNET" [color=lightcoral shape=hexagon style=filled]
+		"android.permission.INTERNET" [color=lightcoral shape=hexagon style=filled]
+		"android.permission.INTERNET" [color=lightcoral shape=hexagon style=filled]
+		"android.permission.INTERNET" [color=lightcoral shape=hexagon style=filled]
+		"android.permission.INTERNET" [color=lightcoral shape=hexagon style=filled]
+		"android.permission.INTERNET" [color=lightcoral shape=hexagon style=filled]
+		"android.permission.INTERNET" [color=lightcoral shape=hexagon style=filled]
+		"android.permission.INTERNET" [color=lightcoral shape=hexagon style=filled]
+		subgraph cluster_app {
+			"com.insecureshop.databinding.ActivityPrivateBindingImpl"
+			"com.insecureshop.databinding.ActivityWebviewBindingImpl"
+			"com.bumptech.glide.load.data.HttpUrlFetcher"
+			"net.gotev.uploadservice.http.impl.HurlStackConnection"
+			"com.insecureshop.PrivateActivity"
+			"com.insecureshop.databinding.ActivityWebviewBinding"
+			"com.insecureshop.util.CustomWebViewClient"
+			"net.gotev.uploadservice.http.impl.HurlStackConnection"
+			"com.insecureshop.WebViewActivity"
+			"com.insecureshop.databinding.ActivityPrivateBinding"
+			"com.insecureshop.WebView2Activity"
+		}
+	}
+	subgraph cluster_android {
+		subgraph cluster_app {
+			"com.bumptech.glide.disklrucache.DiskLruCache"
+			"Temp File" [color=lightblue shape=cylinder style=filled]
+			"com.bumptech.glide.disklrucache.DiskLruCache" -> "Temp File"
+			"Temp File" -> "com.bumptech.glide.disklrucache.DiskLruCache"
+			"com.bumptech.glide.disklrucache.Util"
+			"Temp File" [color=lightblue shape=cylinder style=filled]
+			"com.bumptech.glide.disklrucache.Util" -> "Temp File"
+			"Temp File" -> "com.bumptech.glide.disklrucache.Util"
+			"com.insecureshop.ChooserActivity"
+			"External Storage" [color=lightblue shape=cylinder style=filled]
+			"com.insecureshop.ChooserActivity" -> "External Storage"
+			"External Storage" -> "com.insecureshop.ChooserActivity"
+			"com.bumptech.glide.load.engine.cache.DiskCache"
+			"Temp File" [color=lightblue shape=cylinder style=filled]
+			"com.bumptech.glide.load.engine.cache.DiskCache" -> "Temp File"
+			"Temp File" -> "com.bumptech.glide.load.engine.cache.DiskCache"
+			"com.insecureshop.util.Prefs"
+			"Shared Preferences" [color=lightblue shape=cylinder style=filled]
+			"com.insecureshop.util.Prefs" -> "Shared Preferences"
+			"Shared Preferences" -> "com.insecureshop.util.Prefs"
+			"com.bumptech.glide.load.engine.cache.ExternalCacheDiskCacheFactory"
+			"Internal Storage" [color=lightblue shape=cylinder style=filled]
+			"com.bumptech.glide.load.engine.cache.ExternalCacheDiskCacheFactory" -> "Internal Storage"
+			"Internal Storage" -> "com.bumptech.glide.load.engine.cache.ExternalCacheDiskCacheFactory"
+			"com.bumptech.glide.load.engine.cache.ExternalPreferredCacheDiskCacheFactory"
+			"Internal Storage" [color=lightblue shape=cylinder style=filled]
+			"com.bumptech.glide.load.engine.cache.ExternalPreferredCacheDiskCacheFactory" -> "Internal Storage"
+			"Internal Storage" -> "com.bumptech.glide.load.engine.cache.ExternalPreferredCacheDiskCacheFactory"
+			"net.gotev.uploadservice.UploadTask"
+			"Internal Storage" [color=lightblue shape=cylinder style=filled]
+			"net.gotev.uploadservice.UploadTask" -> "Internal Storage"
+			"Internal Storage" -> "net.gotev.uploadservice.UploadTask"
+			"com.bumptech.glide.Glide"
+			"Internal Storage" [color=lightblue shape=cylinder style=filled]
+			"com.bumptech.glide.Glide" -> "Internal Storage"
+			"Internal Storage" -> "com.bumptech.glide.Glide"
+			"com.bumptech.glide.load.engine.cache.ExternalCacheDiskCacheFactory"
+			"External Storage" [color=lightblue shape=cylinder style=filled]
+			"com.bumptech.glide.load.engine.cache.ExternalCacheDiskCacheFactory" -> "External Storage"
+			"External Storage" -> "com.bumptech.glide.load.engine.cache.ExternalCacheDiskCacheFactory"
+			"net.gotev.uploadservice.UploadTask"
+			"Temp File" [color=lightblue shape=cylinder style=filled]
+			"net.gotev.uploadservice.UploadTask" -> "Temp File"
+			"Temp File" -> "net.gotev.uploadservice.UploadTask"
+			"com.bumptech.glide.load.engine.cache.ExternalPreferredCacheDiskCacheFactory"
+			"External Storage" [color=lightblue shape=cylinder style=filled]
+			"com.bumptech.glide.load.engine.cache.ExternalPreferredCacheDiskCacheFactory" -> "External Storage"
+			"External Storage" -> "com.bumptech.glide.load.engine.cache.ExternalPreferredCacheDiskCacheFactory"
+			"com.bumptech.glide.load.data.mediastore.ThumbFetcher"
+			"Media Storage" [color=lightblue shape=cylinder style=filled]
+			"com.bumptech.glide.load.data.mediastore.ThumbFetcher" -> "Media Storage"
+			"Media Storage" -> "com.bumptech.glide.load.data.mediastore.ThumbFetcher"
+			"com.bumptech.glide.load.engine.cache.DiskLruCacheFactory"
+			"Internal Storage" [color=lightblue shape=cylinder style=filled]
+			"com.bumptech.glide.load.engine.cache.DiskLruCacheFactory" -> "Internal Storage"
+			"Internal Storage" -> "com.bumptech.glide.load.engine.cache.DiskLruCacheFactory"
+			"com.bumptech.glide.load.engine.cache.InternalCacheDiskCacheFactory"
+			"Internal Storage" [color=lightblue shape=cylinder style=filled]
+			"com.bumptech.glide.load.engine.cache.InternalCacheDiskCacheFactory" -> "Internal Storage"
+			"Internal Storage" -> "com.bumptech.glide.load.engine.cache.InternalCacheDiskCacheFactory"
+			"com.bumptech.glide.load.engine.cache.DiskCacheAdapter"
+			"Temp File" [color=lightblue shape=cylinder style=filled]
+			"com.bumptech.glide.load.engine.cache.DiskCacheAdapter" -> "Temp File"
+			"Temp File" -> "com.bumptech.glide.load.engine.cache.DiskCacheAdapter"
+			"com.bumptech.glide.load.engine.cache.DiskLruCacheWrapper"
+			"Temp File" [color=lightblue shape=cylinder style=filled]
+			"com.bumptech.glide.load.engine.cache.DiskLruCacheWrapper" -> "Temp File"
+			"Temp File" -> "com.bumptech.glide.load.engine.cache.DiskLruCacheWrapper"
+			"com.bumptech.glide.disklrucache.DiskLruCache"
+			"Internal Storage" [color=lightblue shape=cylinder style=filled]
+			"com.bumptech.glide.disklrucache.DiskLruCache" -> "Internal Storage"
+			"Internal Storage" -> "com.bumptech.glide.disklrucache.DiskLruCache"
+		}
+	}
+	Contacts [color=darkorchid1 shape=rectangle style=filled]
+	subgraph cluster_android {
+		"com.bumptech.glide.load.data.StreamLocalUriFetcher" -> Contacts
+		Contacts -> "com.bumptech.glide.load.data.StreamLocalUriFetcher"
+		"android.permission.READ_CONTACTS" [color=lightcoral shape=hexagon style=filled]
+		"com.bumptech.glide.load.data.StreamLocalUriFetcher" -> "android.permission.READ_CONTACTS"
+		Contacts -> "android.permission.READ_CONTACTS"
+		subgraph cluster_app {
+			"com.bumptech.glide.load.data.StreamLocalUriFetcher"
+		}
+	}
+	subgraph cluster_android {
+		"android.permission.WRITE_CONTACTS" [color=lightcoral shape=hexagon style=filled]
+		"com.bumptech.glide.load.data.StreamLocalUriFetcher" -> "android.permission.WRITE_CONTACTS"
+		Contacts -> "android.permission.WRITE_CONTACTS"
+		subgraph cluster_app {
+		}
+	}
+}

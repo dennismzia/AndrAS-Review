@@ -1,0 +1,77 @@
+digraph threat_model {
+	rankdir=TD size="8,5"
+	node [shape=ellipse]
+	subgraph cluster_android {
+		color=green label="Android OS"
+		"External Entities" [color=gray shape=rectangle style=filled]
+		"External Entities" -> "jakhar.aseem.diva.APICredsActivity"
+		"External Entities" [color=gray shape=rectangle style=filled]
+		"External Entities" -> "jakhar.aseem.diva.APICreds2Activity"
+		"External Entities" [color=gray shape=rectangle style=filled]
+		"External Entities" -> "jakhar.aseem.diva.MainActivity"
+		"External Entities" [color=gray shape=rectangle style=filled]
+		"External Entities" -> "jakhar.aseem.diva.NotesProvider"
+		subgraph cluster_app {
+			"jakhar.aseem.diva.APICredsActivity"
+			"jakhar.aseem.diva.APICreds2Activity"
+			"jakhar.aseem.diva.MainActivity"
+			"jakhar.aseem.diva.NotesProvider"
+			color=red label=Diva
+		}
+		subgraph cluster_app {
+		}
+		subgraph cluster_app {
+		}
+	}
+	"WebView Connection" [color=gold1 shape=rectangle style=filled]
+	"jakhar.aseem.diva.InputValidation2URISchemeActivity" -> "WebView Connection"
+	"WebView Connection" -> "jakhar.aseem.diva.InputValidation2URISchemeActivity"
+	"jakhar.aseem.diva.InputValidation2URISchemeActivity" -> "android.permission.INTERNET"
+	"WebView Connection" -> "android.permission.INTERNET"
+	subgraph cluster_android {
+		"android.permission.INTERNET" [color=lightcoral shape=hexagon style=filled]
+		subgraph cluster_app {
+			"jakhar.aseem.diva.InputValidation2URISchemeActivity"
+		}
+	}
+	subgraph cluster_android {
+		subgraph cluster_app {
+			"jakhar.aseem.diva.InsecureDataStorage2Activity"
+			"SQLite Databases" [color=lightblue shape=cylinder style=filled]
+			"jakhar.aseem.diva.InsecureDataStorage2Activity" -> "SQLite Databases"
+			"SQLite Databases" -> "jakhar.aseem.diva.InsecureDataStorage2Activity"
+			"jakhar.aseem.diva.NotesProvider"
+			"SQLite Databases" [color=lightblue shape=cylinder style=filled]
+			"jakhar.aseem.diva.NotesProvider" -> "SQLite Databases"
+			"SQLite Databases" -> "jakhar.aseem.diva.NotesProvider"
+			"jakhar.aseem.diva.AccessControl3Activity"
+			"Shared Preferences" [color=lightblue shape=cylinder style=filled]
+			"jakhar.aseem.diva.AccessControl3Activity" -> "Shared Preferences"
+			"Shared Preferences" -> "jakhar.aseem.diva.AccessControl3Activity"
+			"jakhar.aseem.diva.SQLInjectionActivity"
+			"SQLite Databases" [color=lightblue shape=cylinder style=filled]
+			"jakhar.aseem.diva.SQLInjectionActivity" -> "SQLite Databases"
+			"SQLite Databases" -> "jakhar.aseem.diva.SQLInjectionActivity"
+			"jakhar.aseem.diva.AccessControl3NotesActivity"
+			"Shared Preferences" [color=lightblue shape=cylinder style=filled]
+			"jakhar.aseem.diva.AccessControl3NotesActivity" -> "Shared Preferences"
+			"Shared Preferences" -> "jakhar.aseem.diva.AccessControl3NotesActivity"
+			"jakhar.aseem.diva.InsecureDataStorage3Activity"
+			"Temp File" [color=lightblue shape=cylinder style=filled]
+			"jakhar.aseem.diva.InsecureDataStorage3Activity" -> "Temp File"
+			"Temp File" -> "jakhar.aseem.diva.InsecureDataStorage3Activity"
+			"jakhar.aseem.diva.InsecureDataStorage3Activity"
+			"Internal Storage" [color=lightblue shape=cylinder style=filled]
+			"jakhar.aseem.diva.InsecureDataStorage3Activity" -> "Internal Storage"
+			"Internal Storage" -> "jakhar.aseem.diva.InsecureDataStorage3Activity"
+			"jakhar.aseem.diva.InsecureDataStorage4Activity"
+			"External Storage" [color=lightblue shape=cylinder style=filled]
+			"jakhar.aseem.diva.InsecureDataStorage4Activity" -> "External Storage"
+			"External Storage" -> "jakhar.aseem.diva.InsecureDataStorage4Activity"
+			"jakhar.aseem.diva.InsecureDataStorage1Activity"
+			"Shared Preferences" [color=lightblue shape=cylinder style=filled]
+			"jakhar.aseem.diva.InsecureDataStorage1Activity" -> "Shared Preferences"
+			"Shared Preferences" -> "jakhar.aseem.diva.InsecureDataStorage1Activity"
+		}
+	}
+}

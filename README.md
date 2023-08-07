@@ -21,7 +21,7 @@ The output files are in the Test folder.
 Example:
 
 ```
-python analyze.py -a Diva.apk -d Test -i None
+python analyze.py -a DivaApplication.apk -d Test -i None
 ```
 
 ### Usage
