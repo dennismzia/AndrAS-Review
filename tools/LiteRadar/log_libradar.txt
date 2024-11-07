@@ -1,0 +1,5 @@
+Tue, 28 Mar 2023 15:30:00 literadar.py[line:133] DEBUG APK ../../app/app-debug.apk's MD5 is dc50ddc36ffd53e10c379818d94ccf3d3d477ae87c8b3c302119fb1adc3a3236
+Tue, 28 Mar 2023 15:30:00 literadar.py[line:193] DEBUG Extracting /Users/pakkunandy/Research_PhD/Enumeration/AndrAS/tools/LiteRadar/LiteRadar/Data/Decompiled/dc50ddc36ffd53e10c379818d94ccf3d3d477ae87c8b3c302119fb1adc3a3236/classes.dex
+Tue, 28 Mar 2023 15:30:00 literadar.py[line:193] DEBUG Extracting /Users/pakkunandy/Research_PhD/Enumeration/AndrAS/tools/LiteRadar/LiteRadar/Data/Decompiled/dc50ddc36ffd53e10c379818d94ccf3d3d477ae87c8b3c302119fb1adc3a3236/classes2.dex
+Tue, 28 Mar 2023 15:30:37 literadar.py[line:133] DEBUG APK org.woheller69.omweather_11.apk's MD5 is 78407793deb7914125992fc05a47b4bd1417f481ddce0af0588ef1c6b69cfac5
+Tue, 28 Mar 2023 15:30:37 literadar.py[line:193] DEBUG Extracting /Users/pakkunandy/Research_PhD/Enumeration/AndrAS/tools/LiteRadar/LiteRadar/Data/Decompiled/78407793deb7914125992fc05a47b4bd1417f481ddce0af0588ef1c6b69cfac5/classes.dex
