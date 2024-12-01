@@ -36,26 +36,30 @@ digraph threat_model {
 	}
 	subgraph cluster_android {
 		subgraph cluster_app {
+			"jakhar.aseem.diva.InsecureDataStorage1Activity"
+			"Shared Preferences" [color=lightblue shape=cylinder style=filled]
+			"jakhar.aseem.diva.InsecureDataStorage1Activity" -> "Shared Preferences"
+			"Shared Preferences" -> "jakhar.aseem.diva.InsecureDataStorage1Activity"
 			"jakhar.aseem.diva.InsecureDataStorage2Activity"
 			"SQLite Databases" [color=lightblue shape=cylinder style=filled]
 			"jakhar.aseem.diva.InsecureDataStorage2Activity" -> "SQLite Databases"
 			"SQLite Databases" -> "jakhar.aseem.diva.InsecureDataStorage2Activity"
-			"jakhar.aseem.diva.NotesProvider"
-			"SQLite Databases" [color=lightblue shape=cylinder style=filled]
-			"jakhar.aseem.diva.NotesProvider" -> "SQLite Databases"
-			"SQLite Databases" -> "jakhar.aseem.diva.NotesProvider"
-			"jakhar.aseem.diva.AccessControl3Activity"
-			"Shared Preferences" [color=lightblue shape=cylinder style=filled]
-			"jakhar.aseem.diva.AccessControl3Activity" -> "Shared Preferences"
-			"Shared Preferences" -> "jakhar.aseem.diva.AccessControl3Activity"
 			"jakhar.aseem.diva.SQLInjectionActivity"
 			"SQLite Databases" [color=lightblue shape=cylinder style=filled]
 			"jakhar.aseem.diva.SQLInjectionActivity" -> "SQLite Databases"
 			"SQLite Databases" -> "jakhar.aseem.diva.SQLInjectionActivity"
+			"jakhar.aseem.diva.NotesProvider"
+			"SQLite Databases" [color=lightblue shape=cylinder style=filled]
+			"jakhar.aseem.diva.NotesProvider" -> "SQLite Databases"
+			"SQLite Databases" -> "jakhar.aseem.diva.NotesProvider"
 			"jakhar.aseem.diva.AccessControl3NotesActivity"
 			"Shared Preferences" [color=lightblue shape=cylinder style=filled]
 			"jakhar.aseem.diva.AccessControl3NotesActivity" -> "Shared Preferences"
 			"Shared Preferences" -> "jakhar.aseem.diva.AccessControl3NotesActivity"
+			"jakhar.aseem.diva.AccessControl3Activity"
+			"Shared Preferences" [color=lightblue shape=cylinder style=filled]
+			"jakhar.aseem.diva.AccessControl3Activity" -> "Shared Preferences"
+			"Shared Preferences" -> "jakhar.aseem.diva.AccessControl3Activity"
 			"jakhar.aseem.diva.InsecureDataStorage3Activity"
 			"Temp File" [color=lightblue shape=cylinder style=filled]
 			"jakhar.aseem.diva.InsecureDataStorage3Activity" -> "Temp File"
@@ -68,10 +72,6 @@ digraph threat_model {
 			"External Storage" [color=lightblue shape=cylinder style=filled]
 			"jakhar.aseem.diva.InsecureDataStorage4Activity" -> "External Storage"
 			"External Storage" -> "jakhar.aseem.diva.InsecureDataStorage4Activity"
-			"jakhar.aseem.diva.InsecureDataStorage1Activity"
-			"Shared Preferences" [color=lightblue shape=cylinder style=filled]
-			"jakhar.aseem.diva.InsecureDataStorage1Activity" -> "Shared Preferences"
-			"Shared Preferences" -> "jakhar.aseem.diva.InsecureDataStorage1Activity"
 		}
 	}
 }

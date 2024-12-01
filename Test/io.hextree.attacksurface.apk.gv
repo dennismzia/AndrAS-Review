@@ -1,0 +1,154 @@
+digraph threat_model {
+	rankdir=TD size="8,5"
+	node [shape=ellipse]
+	subgraph cluster_android {
+		color=green label="Android OS"
+		"External Entities" [color=gray shape=rectangle style=filled]
+		"External Entities" -> "io.hextree.attacksurface.activities.Flag1Activity"
+		"External Entities" [color=gray shape=rectangle style=filled]
+		"External Entities" -> "io.hextree.attacksurface.activities.Flag2Activity"
+		"External Entities" [color=gray shape=rectangle style=filled]
+		"External Entities" -> "io.hextree.attacksurface.activities.Flag3Activity"
+		"External Entities" [color=gray shape=rectangle style=filled]
+		"External Entities" -> "io.hextree.attacksurface.activities.Flag4Activity"
+		"External Entities" [color=gray shape=rectangle style=filled]
+		"External Entities" -> "io.hextree.attacksurface.activities.Flag5Activity"
+		"External Entities" [color=gray shape=rectangle style=filled]
+		"External Entities" -> "io.hextree.attacksurface.activities.Flag7Activity"
+		"External Entities" [color=gray shape=rectangle style=filled]
+		"External Entities" -> "io.hextree.attacksurface.activities.Flag8Activity"
+		"External Entities" [color=gray shape=rectangle style=filled]
+		"External Entities" -> "io.hextree.attacksurface.activities.Flag9Activity"
+		"External Entities" [color=gray shape=rectangle style=filled]
+		"External Entities" -> "io.hextree.attacksurface.activities.Flag12Activity"
+		"External Entities" [color=gray shape=rectangle style=filled]
+		"External Entities" -> "io.hextree.attacksurface.activities.Flag13Activity"
+		"External Entities" [color=gray shape=rectangle style=filled]
+		"External Entities" -> "io.hextree.attacksurface.activities.Flag14Activity"
+		"External Entities" [color=gray shape=rectangle style=filled]
+		"External Entities" -> "io.hextree.attacksurface.activities.Flag15Activity"
+		"External Entities" [color=gray shape=rectangle style=filled]
+		"External Entities" -> "io.hextree.attacksurface.activities.Flag22Activity"
+		"External Entities" [color=gray shape=rectangle style=filled]
+		"External Entities" -> "io.hextree.attacksurface.activities.Flag33Activity1"
+		"External Entities" [color=gray shape=rectangle style=filled]
+		"External Entities" -> "io.hextree.attacksurface.activities.Flag34Activity"
+		"External Entities" [color=gray shape=rectangle style=filled]
+		"External Entities" -> "io.hextree.attacksurface.activities.Flag35Activity"
+		"External Entities" [color=gray shape=rectangle style=filled]
+		"External Entities" -> "io.hextree.attacksurface.activities.Flag36Activity"
+		"External Entities" [color=gray shape=rectangle style=filled]
+		"External Entities" -> "io.hextree.attacksurface.activities.Flag37Activity"
+		"External Entities" [color=gray shape=rectangle style=filled]
+		"External Entities" -> "io.hextree.attacksurface.MainActivity"
+		"External Entities" [color=gray shape=rectangle style=filled]
+		"External Entities" -> "io.hextree.attacksurface.services.Flag24Service"
+		"External Entities" [color=gray shape=rectangle style=filled]
+		"External Entities" -> "io.hextree.attacksurface.services.Flag25Service"
+		"External Entities" [color=gray shape=rectangle style=filled]
+		"External Entities" -> "io.hextree.attacksurface.services.Flag26Service"
+		"External Entities" [color=gray shape=rectangle style=filled]
+		"External Entities" -> "io.hextree.attacksurface.services.Flag27Service"
+		"External Entities" [color=gray shape=rectangle style=filled]
+		"External Entities" -> "io.hextree.attacksurface.services.Flag28Service"
+		"External Entities" [color=gray shape=rectangle style=filled]
+		"External Entities" -> "io.hextree.attacksurface.services.Flag29Service"
+		"External Entities" [color=gray shape=rectangle style=filled]
+		"External Entities" -> "io.hextree.attacksurface.providers.Flag30Provider"
+		"External Entities" [color=gray shape=rectangle style=filled]
+		"External Entities" -> "io.hextree.attacksurface.providers.Flag31Provider"
+		"External Entities" [color=gray shape=rectangle style=filled]
+		"External Entities" -> "io.hextree.attacksurface.providers.Flag32Provider"
+		"External Entities" [color=gray shape=rectangle style=filled]
+		"External Entities" -> "io.hextree.attacksurface.receivers.Flag17Receiver"
+		"External Entities" [color=gray shape=rectangle style=filled]
+		"External Entities" -> "io.hextree.attacksurface.receivers.Flag16Receiver"
+		"External Entities" [color=gray shape=rectangle style=filled]
+		"External Entities" -> "io.hextree.attacksurface.receivers.Flag19Widget"
+		"External Entities" [color=gray shape=rectangle style=filled]
+		"External Entities" -> "androidx.profileinstaller.ProfileInstallReceiver"
+		subgraph cluster_app {
+			"io.hextree.attacksurface.activities.Flag1Activity"
+			"io.hextree.attacksurface.activities.Flag2Activity"
+			"io.hextree.attacksurface.activities.Flag3Activity"
+			"io.hextree.attacksurface.activities.Flag4Activity"
+			"io.hextree.attacksurface.activities.Flag5Activity"
+			"io.hextree.attacksurface.activities.Flag7Activity"
+			"io.hextree.attacksurface.activities.Flag8Activity"
+			"io.hextree.attacksurface.activities.Flag9Activity"
+			"io.hextree.attacksurface.activities.Flag12Activity"
+			"io.hextree.attacksurface.activities.Flag13Activity"
+			"io.hextree.attacksurface.activities.Flag14Activity"
+			"io.hextree.attacksurface.activities.Flag15Activity"
+			"io.hextree.attacksurface.activities.Flag22Activity"
+			"io.hextree.attacksurface.activities.Flag33Activity1"
+			"io.hextree.attacksurface.activities.Flag34Activity"
+			"io.hextree.attacksurface.activities.Flag35Activity"
+			"io.hextree.attacksurface.activities.Flag36Activity"
+			"io.hextree.attacksurface.activities.Flag37Activity"
+			"io.hextree.attacksurface.MainActivity"
+			"io.hextree.attacksurface.services.Flag24Service"
+			"io.hextree.attacksurface.services.Flag25Service"
+			"io.hextree.attacksurface.services.Flag26Service"
+			"io.hextree.attacksurface.services.Flag27Service"
+			"io.hextree.attacksurface.services.Flag28Service"
+			"io.hextree.attacksurface.services.Flag29Service"
+			"io.hextree.attacksurface.providers.Flag30Provider"
+			"io.hextree.attacksurface.providers.Flag31Provider"
+			"io.hextree.attacksurface.providers.Flag32Provider"
+			"io.hextree.attacksurface.receivers.Flag17Receiver"
+			"io.hextree.attacksurface.receivers.Flag16Receiver"
+			"io.hextree.attacksurface.receivers.Flag19Widget"
+			"androidx.profileinstaller.ProfileInstallReceiver"
+			color=red label="Intent Attack Surface"
+		}
+		subgraph cluster_app {
+		}
+		subgraph cluster_app {
+		}
+	}
+	subgraph cluster_android {
+		subgraph cluster_app {
+			"io.hextree.attacksurface.SolvedPreferences"
+			"Shared Preferences" [color=lightblue shape=cylinder style=filled]
+			"io.hextree.attacksurface.SolvedPreferences" -> "Shared Preferences"
+			"Shared Preferences" -> "io.hextree.attacksurface.SolvedPreferences"
+			"io.hextree.attacksurface.Flag36Preferences"
+			"Shared Preferences" [color=lightblue shape=cylinder style=filled]
+			"io.hextree.attacksurface.Flag36Preferences" -> "Shared Preferences"
+			"Shared Preferences" -> "io.hextree.attacksurface.Flag36Preferences"
+			"io.hextree.attacksurface.activities.Flag35Activity"
+			"Internal Storage" [color=lightblue shape=cylinder style=filled]
+			"io.hextree.attacksurface.activities.Flag35Activity" -> "Internal Storage"
+			"Internal Storage" -> "io.hextree.attacksurface.activities.Flag35Activity"
+			"io.hextree.attacksurface.Utils"
+			"Internal Storage" [color=lightblue shape=cylinder style=filled]
+			"io.hextree.attacksurface.Utils" -> "Internal Storage"
+			"Internal Storage" -> "io.hextree.attacksurface.Utils"
+			"io.hextree.attacksurface.providers.Flag33Provider1"
+			"SQLite Databases" [color=lightblue shape=cylinder style=filled]
+			"io.hextree.attacksurface.providers.Flag33Provider1" -> "SQLite Databases"
+			"SQLite Databases" -> "io.hextree.attacksurface.providers.Flag33Provider1"
+			"io.hextree.attacksurface.activities.Flag34Activity"
+			"Internal Storage" [color=lightblue shape=cylinder style=filled]
+			"io.hextree.attacksurface.activities.Flag34Activity" -> "Internal Storage"
+			"Internal Storage" -> "io.hextree.attacksurface.activities.Flag34Activity"
+			"io.hextree.attacksurface.providers.Flag33Provider2"
+			"SQLite Databases" [color=lightblue shape=cylinder style=filled]
+			"io.hextree.attacksurface.providers.Flag33Provider2" -> "SQLite Databases"
+			"SQLite Databases" -> "io.hextree.attacksurface.providers.Flag33Provider2"
+			"io.hextree.attacksurface.providers.Flag31Provider"
+			"SQLite Databases" [color=lightblue shape=cylinder style=filled]
+			"io.hextree.attacksurface.providers.Flag31Provider" -> "SQLite Databases"
+			"SQLite Databases" -> "io.hextree.attacksurface.providers.Flag31Provider"
+			"io.hextree.attacksurface.FlagDatabaseHelper"
+			"SQLite Databases" [color=lightblue shape=cylinder style=filled]
+			"io.hextree.attacksurface.FlagDatabaseHelper" -> "SQLite Databases"
+			"SQLite Databases" -> "io.hextree.attacksurface.FlagDatabaseHelper"
+			"io.hextree.attacksurface.providers.Flag32Provider"
+			"SQLite Databases" [color=lightblue shape=cylinder style=filled]
+			"io.hextree.attacksurface.providers.Flag32Provider" -> "SQLite Databases"
+			"SQLite Databases" -> "io.hextree.attacksurface.providers.Flag32Provider"
+		}
+	}
+}

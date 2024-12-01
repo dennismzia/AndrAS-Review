@@ -8,8 +8,15 @@ virtualenv venv-andras
 source venv-andras/bin/activate
 pip install r requirements.txt
 ```
+## update Dec 1st 2024
+* For modern applications you will need to upgrade androguard to latest version
+```
+pip install --upgrade androguard
+```
+* You will also need to change the usage of `from androguard.core.bytecodes import apk` in  `staticanalysis/strings.py` to `from androguard.core import apk` or  `import androguard.apk as apk`
 
 ## Run
+
 ```
 cp <filename.apk> Test/<filename.apk>
 
@@ -23,6 +30,16 @@ Example:
 ```
 python analyze.py -a DivaApplication.apk -d Test -i None
 ```
+- other usecase 
+- in root directory create an app/ folder then place the app there then run
+
+```
+python analyze.py -a <filename.apk> -i None
+
+```
+the output will be in the app/ directory
+
+
 
 ### Usage
 ```

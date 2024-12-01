@@ -3,7 +3,9 @@
 import logging
 import os
 
-from androguard.core.bytecodes import apk
+# from androguard.core.bytecodes import apk
+from androguard.core import apk
+
 
 from common.shared_func import (
     is_secret,

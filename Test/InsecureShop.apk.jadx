@@ -1,0 +1,180 @@
+{
+  "projectVersion": 1,
+  "files": [
+    "InsecureShop.apk"
+  ],
+  "treeExpansions": [
+    [
+      "Resources",
+      "InsecureShop.apk"
+    ],
+    [
+      "Files",
+      "Inputs",
+      "InsecureShop.apk"
+    ],
+    [
+      "Source code",
+      "InsecureShop.apk"
+    ],
+    [
+      "com",
+      "Source code",
+      "InsecureShop.apk"
+    ],
+    [
+      "Resources",
+      "InsecureShop.apk"
+    ]
+  ],
+  "codeData": {
+    "comments": [],
+    "renames": []
+  },
+  "openTabs": [
+    {
+      "type": "resource",
+      "tabPath": "AndroidManifest.xml",
+      "subPath": "",
+      "caret": 269,
+      "view": {
+        "x": 0,
+        "y": 0
+      },
+      "active": true,
+      "pinned": false,
+      "bookmarked": false,
+      "hidden": false
+    },
+    {
+      "type": "class",
+      "tabPath": "com.insecureshop.ResultActivity",
+      "subPath": "java",
+      "caret": 786,
+      "view": {
+        "x": 0,
+        "y": 0
+      },
+      "active": false,
+      "pinned": false,
+      "bookmarked": false,
+      "hidden": false
+    },
+    {
+      "type": "class",
+      "tabPath": "com.insecureshop.contentProvider.InsecureShopProvider",
+      "subPath": "java",
+      "caret": 4645,
+      "view": {
+        "x": 0,
+        "y": 1433
+      },
+      "active": false,
+      "pinned": false,
+      "bookmarked": false,
+      "hidden": false
+    },
+    {
+      "type": "class",
+      "tabPath": "com.insecureshop.ProductListActivity",
+      "subPath": "java",
+      "caret": 5101,
+      "view": {
+        "x": 0,
+        "y": 2161
+      },
+      "active": false,
+      "pinned": false,
+      "bookmarked": false,
+      "hidden": false
+    },
+    {
+      "type": "class",
+      "tabPath": "com.insecureshop.LoginActivity",
+      "subPath": "java",
+      "caret": 5573,
+      "view": {
+        "x": 0,
+        "y": 2645
+      },
+      "active": false,
+      "pinned": false,
+      "bookmarked": false,
+      "hidden": false
+    },
+    {
+      "type": "class",
+      "tabPath": "com.insecureshop.WebViewActivity",
+      "subPath": "java",
+      "caret": 5656,
+      "view": {
+        "x": 0,
+        "y": 1193
+      },
+      "active": false,
+      "pinned": false,
+      "bookmarked": false,
+      "hidden": false
+    },
+    {
+      "type": "class",
+      "tabPath": "com.insecureshop.WebView2Activity",
+      "subPath": "java",
+      "caret": 4179,
+      "view": {
+        "x": 0,
+        "y": 1347
+      },
+      "active": false,
+      "pinned": false,
+      "bookmarked": false,
+      "hidden": false
+    },
+    {
+      "type": "class",
+      "tabPath": "com.insecureshop.SendingDataViaActionActivity",
+      "subPath": "java",
+      "caret": 1294,
+      "view": {
+        "x": 0,
+        "y": 1105
+      },
+      "active": false,
+      "pinned": false,
+      "bookmarked": false,
+      "hidden": false
+    },
+    {
+      "type": "class",
+      "tabPath": "com.insecureshop.PrivateActivity",
+      "subPath": "java",
+      "caret": 3414,
+      "view": {
+        "x": 0,
+        "y": 1413
+      },
+      "active": false,
+      "pinned": false,
+      "bookmarked": false,
+      "hidden": false
+    },
+    {
+      "type": "class",
+      "tabPath": "net.gotev.uploadservice.UploadService",
+      "subPath": "java",
+      "caret": 8708,
+      "view": {
+        "x": 0,
+        "y": 858
+      },
+      "active": false,
+      "pinned": false,
+      "bookmarked": false,
+      "hidden": false
+    }
+  ],
+  "cacheDir": "/home/mrobot/.var/app/com.github.skylot.jadx/cache/jadx/projects/InsecureShop-430a1e6f453d05a707f00a94083b2cf0",
+  "enableLiveReload": false,
+  "searchHistory": [],
+  "pluginOptions": {}
+}

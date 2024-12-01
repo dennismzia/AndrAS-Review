@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 from pathlib import Path
 from urllib.parse import urlparse
 from stastic_analysis.strings import strings_from_apk
